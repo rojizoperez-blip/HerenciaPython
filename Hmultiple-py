@@ -1,0 +1,39 @@
+
+class Animal:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+    def respirar(self):
+        print(f"{self.nombre} está respirando.")
+
+
+
+class Nadador:
+    def nadar(self):
+        print(f"{self.nombre} está nadando.")
+
+
+
+class Volador:
+    def volar(self):
+        print(f"{self.nombre} está volando.")
+
+
+
+class Pato(Animal, Nadador, Volador):
+    def __init__(self, nombre):
+        super().__init__(nombre)  
+
+    def graznar(self):
+        print(f"{self.nombre} dice: ¡Cuac!")
+
+
+
+donald = Pato("Donald")
+
+donald.respirar()  
+donald.nadar()      
+donald.volar()     
+donald.graznar()    
+
+print(Pato.__mro__)
